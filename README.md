@@ -8,8 +8,8 @@ based on Google Apps Script.
 [[twirrer.netlify.app](https://script.google.com/macros/s/AKfycbzzZjxexWVIY2_5Ys3bZymyhlLfrfl9pmA9Fhx9n6U12YHQ5qMpuYmayM58DsjZWIRI/exec)](https://script.google.com/macros/s/AKfycbzzZjxexWVIY2_5Ys3bZymyhlLfrfl9pmA9Fhx9n6U12YHQ5qMpuYmayM58DsjZWIRI/exec)
 
 ## Project Screenshot
-![Alt-текст]( https://github.com/islamhadjime/google_app_script/blob/master/screen/g_a-1.pn "Card")
-![Alt-текст]( https://github.com/islamhadjime/google_app_script/blob/master/screen/g_a-2.pn "Card")
+![Alt-текст](https://github.com/islamhadjime/google_app_script/blob/master/screen/g_a-1.png "Card")
+![Alt-текст](https://github.com/islamhadjime/google_app_script/blob/master/screen/g_a-2.pn "Card")
 
 ## Video
 
