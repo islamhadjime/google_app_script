@@ -1,0 +1,193 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <?!= include("style"); ?>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+  
+    <title>Статистка школы</title>
+</head>
+<body>
+
+    <p id="label" class="label"> <?= isLabel; ?> </p>
+    <div id="root">
+        <div class="aside">
+            <div class="aside__conetnt">
+                <div class="aside__top">
+                    <div class="aside__top-bar">
+                        <div class="aside__active">
+                            <div class="--active"></div>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <div class="aside__profile">
+                        <div class="aside__profile-img">
+                            <img src="https://sun61-2.userapi.com/s/v1/if2/J-NEpWjlVMcC0QD7EBJs59ZVMgdY3k_YB04W2SuO4wYFs6i65GD_3s-2g32L8jDhYqpYZXhTRLo56p0xo7sqJt15.jpg?quality=95&crop=64,69,343,343&as=50x50,100x100,200x200&ava=1&u=Yz8SBMxy-39xkMvBvM7nbXGaomM4L4zAuoZ6SSEK6r0&cs=200x200" alt="">
+                        </div>
+                        <div class="aside__profile-info">
+                            <h4>МУ "Отдел образования <br/> Шалинского района"</h4>
+                            <span>islam.hadj95@mail.ru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside__bottom">
+                    <div class="aside__lister">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main__content">
+              <div class="main__services">
+                  <div class="main__services-items ">
+                  </div>
+              </div>
+              <div class="main_chart --content-div" id="scrollDown">
+                  <canvas id="myChart" width="1350" height="400" ></canvas>
+              </div>
+              <div class="main__dinamik">
+                <div class="dinamik__schools --content-div">
+                  <div class="dinamik__top-list">
+                    <button type="button" class="btn btn-school btn-school-activ" id="min__dinamik">Красная зона</button>
+                    <button type="button" class="btn btn-school" id="srt__dinamik" >Желтая зона</button>
+                    <button type="button" class="btn btn-school" id="max__dinamik" >Зеленая зона</button>
+                  </div>
+                  <div class="dinamik__school-bottom">
+                    <div class="dinamik__bottom-min">
+                    </div>
+                    <div class="dinamik__bottom-srt">
+                    </div>
+                    <div class="dinamik__bottom-max">
+                    </div>
+                  </div>
+                </div>
+                <div class="dinamik__maps --content-div">
+                    <h4 class="dinamik__maps-title">Названия проекта  <span class="dinamik__maps-title-T"> </span> </h4>
+                    <div class="dinamik__maps-info">
+                        <div class="dinamik__maps-des">
+                          <span>
+                            Требования проекта
+                          </span>
+                          <span>
+                            &#128075;
+                          </span>
+                        </div>
+                        <div class="dinamik__maps-min">
+                          <span>
+                            Минимальное значение
+                          </span>
+                          <span>
+                            &#128073;
+                          </span>
+                          <span class="dinamik__maps-min-count">
+                            0
+                          </span>
+                        </div>
+                        <div class="dinamik__maps-max">
+                          <span>
+                            Максимальное значение
+                          </span>
+                          <span>
+                            &#128073;
+                          </span>
+                          <span class="dinamik__maps-max-count">
+                            0
+                          </span>
+                        </div>
+                        <div class="dinamik__maps-data">
+                          <span>
+                            Дата отчета
+                          </span>
+                          <span>
+                            &#128073;
+                          </span>
+                          <span class="dinamik__maps-data-count">
+                            0
+                          </span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="main_tabs --content-div" id="scrollDown">
+                <table>
+                  <thead>
+                    <tr>
+                     <? for(let i=0; i < listApp.thead.length; i++) {?>
+                        <th><?= listApp.thead[i]; ?></th>
+                     <? }?>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <? for(let i=0; i < listApp.tbody.length; i++) {?>
+                      <tr class="table__class<?= i; ?>">
+                        <? for(let x=0; x < listApp.tbody[i].length; x++) {?>
+                          <td> <?= typeof listApp.tbody[i][x]== 'number' ? parseInt(listApp.tbody[i][x]):listApp.tbody[i][x]; ?> </td>
+                        <? } ?>
+                      </tr>
+                    <? } ?>
+                  </tbody>
+                 </table>
+              </div>    
+            </div>
+        </div>
+        <div class="modal">
+          <div class="modal__body">
+            <div class="modal__content">
+                <div class="modal__content-title"></div>
+                <ul class="modal__content-lister">
+                    <div class="modal__content-lister-children">
+                    </div>
+                </ul> 
+                <div class="container__loding">
+                  <div class="line"></div>
+                  <div class="line d1"></div>
+                  <div class="line d2"></div>
+                  <div class="line d3"></div>
+                  <div class="line d4"></div>
+                  <div class="line d5"></div>
+                  <br>
+                  <div class="caption">
+                      <p style='display:inline-block;'>Loading</p>
+                      <div class="dot">.</div>
+                      <div class="dot">.</div>
+                      <div class="dot">.</div>
+                  </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#999" class="bi bi-x-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </button>
+          </div>
+        </div> 
+        <a href="https://github.com/islamhadjime" class="avtor">
+            <div class="avtor__img">
+                <img src="https://avatars.githubusercontent.com/u/57444044?v=4" alt="">
+            </div>
+            <div class="avtor__content">
+                <div class="avtor__content-top">
+                    <span>
+                        Автор работ
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                        <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                    </svg>
+                </div>
+                <p class="avtor__content-name" >Ислам Хаджимурадов</p>
+            </div>
+        </a>
+    </div>
+
+    <script async src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script  src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <?!= include('script'); ?> 
+</body>
+</html>
+
